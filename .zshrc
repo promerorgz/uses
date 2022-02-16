@@ -69,9 +69,6 @@ HIST_STAMPS="mm/dd/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=( git zsh-syntax-highlighting)
 
-export HTTP_PROXY=http://elbgi:B1fr05t!@10.86.255.70:8080
-export HTTPS_PROXY=http://elbgi:B1fr05t!@10.86.255.70:8080
-
 export PATH=/Users/elbgi/Library/Python/3.9/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
@@ -108,14 +105,11 @@ COMPLETION_WAITING_DOTS="true"
 #terminal shortcuts
 alias zs='reset && source ~/.zshrc'
 alias editzsh='code ~/.zshrc'
-alias cdssh='code ~/.ssh'
 alias bash='code ~/.bash_profile'
 alias sourcebash='source ~/.bash_profile'
 
 
 export NVM_DIR=~/.nvm
-alias ssh='~/vaultsign;ssh $@'
-export VAULT_ADDR='https://vault.agro.services'
 
 unset npm_config_prefix
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
@@ -182,32 +176,6 @@ alias remove='rm -rf'
 # yarn config set https-proxy $http_proxy --silent
 # yarn config set no-proxy $no_proxy --silent 
 # yarn config set strict-ssl false --silent 
-
-#flyway
-alias fly-clean="npm run clean-install-dir-sql"
-alias fly-em="npm run export-migrations"
-alias fly-ec="npm run export-conf"
-alias fly-im="npm run import-migrations"
-alias fly-m="npm run migrate"
-alias fly-i="npm run info"
-alias fly-base="npm run baseline"
-alias fly-npsec="npm run activate-np-sec"
-alias fly-prodsec="npm run activate-prod-sec"
-alias fly-np="npm run activate-np-romus"
-alias fly-ut="npm run activate-ut-romus"
-alias fly-dev="npm run activate-local-db"
-alias fly-prod="npm run activate-prod-romus"
-alias fly-ce="npm run clean-export && npm run info"
-alias fly="fly-ce && fly-m"
-alias fly-mine="npm run clean-export-mine"
-
-export flyway_install_dir="/Users/elbgi/flyway-7.14.0"
-# alias flyway="/Users/elbgi/flyway/flyway"
-
-# PG ADMIN
-alias pg-backup-np="pg_dump -h localhost -p 9000  -U root -f romus-np.sql rice"
-alias pg="postgres -D /usr/local/var/postgres"
-
 
 # NPM shortcuts
 
@@ -313,7 +281,6 @@ function gittem(){
    git push
 } 
 
-alias dockerBroccoli="docker build -t fantastic-broccoli ."
 
 alias material="npm install @mui/material @emotion/react @emotion/styled && npm install @mui/icons-material"
 
@@ -327,4 +294,3 @@ function git-rewrite() {
 
 alias forcepush="git push origin --force --all"
 
-export AWS_PROFILE=saml
